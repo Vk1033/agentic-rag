@@ -2,12 +2,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_nvidia_ai_endpoints import ChatNVIDIA
 from pydantic import BaseModel, Field
 
-llm = ChatNVIDIA(
-    model="mistralai/mistral-nemotron",
-    temperature=1,
-    top_p=0.9,
-    max_completion_tokens=16384,
-)
+llm = ChatNVIDIA(model="mistralai/mistral-nemotron")
 
 
 class GradeDocuments(BaseModel):

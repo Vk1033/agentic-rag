@@ -10,12 +10,7 @@ class GradeAnswer(BaseModel):
     )
 
 
-llm = ChatNVIDIA(
-    model="mistralai/mistral-nemotron",
-    temperature=1,
-    top_p=0.9,
-    max_completion_tokens=16384,
-)
+llm = ChatNVIDIA(model="mistralai/mistral-nemotron")
 structured_llm_grader = llm.with_structured_output(GradeAnswer)
 
 system = """You are a grader assessing whether an answer addresses / resolves a question \n 

@@ -14,12 +14,7 @@ class RouteQuery(BaseModel):
     )
 
 
-llm = ChatNVIDIA(
-    model="mistralai/mistral-nemotron",
-    temperature=1,
-    top_p=0.9,
-    max_completion_tokens=16384,
-)
+llm = ChatNVIDIA(model="mistralai/mistral-nemotron")
 structured_llm_router = llm.with_structured_output(RouteQuery)
 
 system = """You are an expert at routing a user question to a vectorstore or web search.
